@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #b80300;
+    --secondary-color: #031927;
+}
+
+body {
+    background: #f5f0f0;
+    margin: 0;
+    font-family: Open Sans,Helvetica,Arial,sans-serif
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.3em;
+    margin-top: .2em;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+li {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    position: relative;
+}
+
+ul > a {
+    background: var(--primary-color);
+    border-radius: 5px;
+    padding: .5em 1.2em;
+    color: white;
+    font-size: 0.8em;
+    width: 80px;
+    height: 20px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+}
+
+/* Navbar */
+
+nav > .content {
+    display: flex;
+    max-width: 100%;
+    width: 1500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 45px;
+    height: 45px;
+}
+
+.left-text {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+/* Hero Section */
+
+.left-col h1{
+    margin: 0;
+    color: var(--secondary-color);
+    width: 600px;
+}
+
+.left-col p{
+    margin: 2em 0;
+    color: rgb(84, 90, 107);
+    width: 550px;
+    font-size: 1.2em;
+}
+
+.hero-img {
+    width: 40%;
+    margin-top: -100px;
+    margin-right: 0;
+}
+
+.hero .container {
+    justify-content: space-between;
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    grid-template-columns: 180px auto;
+    justify-content: unset;
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.hero-cta {
+    display: flex;
+}
+
+/* Buttons */
+
+.primary-cta, .secondary-cta {
+    color: white;
+    text-decoration: none;
+    padding: .5em 1.2em;
+    font-size: 0.8em;
+    border-radius: 5px;
+    width: 100px;
+    height: 25px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+}
+
+.primary-cta {
+    background-color: var(--primary-color);
+    margin-right: 1em;
+}
+
+.secondary-cta {
+    background-color: var(--secondary-color);
+}
+
+
+/* Sections */
+
+section {
+    padding: 10em 4em;
+}
+
+.game-section h2{
+    margin-top: 0;
+    color: var(--secondary-color);
+    width: 395px;
+}
+
+.game-section p{
+    color: #747c94;
+    width: 400px;
+    font-size: 1em;
+}
+
+.content-right {
+    margin: 2em 0 0 15em;
+}
+
+.boxes{
+    display: flex; 
+    background: #191c24; 
+    border-radius: 8px; 
+}
+  
+.box {
+    flex: 1;
+    padding: 40px 40px;
+    color: white;
+    margin: auto;
+    width: 50%;
+}
+
+.box img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: -20px;
+}
+
+.box h2 {
+    font-size: 24px;
+}
+
+.box p {
+    font-size: 15px;
+    color: #b5b8c1;
+}
+
+.card-container {
+    width: 1500px;
+    margin: 0 auto;      
+}
+
+.cards {
+    padding-top: 0;
+    background-color: #d8d6d6;
+}
+
+/* Downloads section */
+
+.mobile-template {
+    width: 30%;
+}
+
+.download {
+    padding: 6em 4em;
+}
+
+.works-container {
+    padding: 6em 4em;
+    background-color: #d8d6d6;
+}
+
+.ios-android {
+    width: 40%;
+    margin-top: 3em;
+}
+
+.star-icon {
+    width: 45px;
+    height: 45px;
+    margin-top: 8em;
+}
+
+.yt-template {
+    width: 50%;
+    margin-left: 22em;
+}
