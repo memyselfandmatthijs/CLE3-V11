@@ -1,0 +1,13 @@
+button{
+    background-color: #a8a8a8;
+}
+
+button:hover {
+    background-color: #808080;
+}
+
+.buttonBox {
+    background: lightgrey;
+    width: 5em;
+    padding: 8px 8px;
+}

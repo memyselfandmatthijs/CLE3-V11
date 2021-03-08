@@ -1,19 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="simonSaysSpecific.css">
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <script src="CLE3-V11/decks/middle/SimonSays.js">
-    </script>
 <body>
 
 <h1>Simon says</h1>
-<button onclick="startGame()">Start</button>
-
+<div class="buttonBox" id="buttonBox">
+    <p class="score" id="score"></p>
+    <button onclick="startGame()">Start</button>
+    <button onclick="restart()">↺</button>
+    <br>
+    <br>
+    <button id="1" onclick="registerClick(1)">1</button>
+    <button id="2" onclick="registerClick(2)">2</button>
+    <button id="3" onclick="registerClick(3)">3</button>
+    <br>
+    <button id="4" onclick="registerClick(4)">4</button>
+    <button id="5" onclick="registerClick(5)">5</button>
+    <button id="6" onclick="registerClick(6)">6</button>
+    <br>
+    <button id="7" onclick="registerClick(7)">7</button>
+    <button id="8" onclick="registerClick(8)">8</button>
+    <button id="9" onclick="registerClick(9)">9</button>
+</div>
+<script src="SimonSays.js">
+</script>
 
 </body>
 </html>
