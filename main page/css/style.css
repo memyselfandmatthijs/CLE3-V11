@@ -112,11 +112,11 @@ nav > .content {
     margin: 0 auto;
 }
 
+/* Buttons */
+
 .hero-cta {
     display: flex;
 }
-
-/* Buttons */
 
 .primary-cta, .secondary-cta {
     color: white;
@@ -233,3 +233,5 @@ section {
     width: 50%;
     margin-left: 22em;
 }
+
+/* Responsiveness */
