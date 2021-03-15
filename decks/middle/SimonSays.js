@@ -2,6 +2,22 @@ let series = [];
 let registeredSeries = [];
 let score = 0;
 
+//add event listeners
+document.getElementById("buttonBox").addEventListener("click", registerClick);
+document.getElementById("startGame").addEventListener("click", startGame);
+document.getElementById("restartGame").addEventListener("click", restart);
+
+//this chooses a random number and adds it to the series array if its not a 0, because the buttons are numbered 1-9
+function addNumber(){
+    let newNumber = Math.floor(Math.random() * 10);
+    if (newNumber === 0){
+        addNumber();
+    }
+    else{
+        series.push(newNumber);
+    }
+}
+
 // this functions first resets all the values, then  it adds a number and runs game()
 function startGame(){
     series.length = 0;
@@ -30,27 +46,11 @@ function game(){
     }
 }
 
-//in addition to starting the game this function resets the background color.
-function restart() {
-    startGame();
-    document.getElementById("buttonBox").style.background = "#a8a8a8";
-}
-
-//this chooses a random number and adds it to the series array if its not a 0, because the buttons are numbered 1-9
-function addNumber(){
-    let newNumber = Math.floor(Math.random() * 10);
-    if (newNumber === 0){
-        addNumber();
+function registerClick(e){
+    if(e.target.tagName === 'BUTTON'){
+        registeredSeries.push(Number(e.target.id));
+        checkAnswer();
     }
-    else{
-        series.push(newNumber);
-    }
-}
-
-
-function registerClick(clickedButton){
-    registeredSeries.push(clickedButton);
-    checkAnswer();
 }
 
 function checkAnswer(){
@@ -79,5 +79,11 @@ function checkAnswer(){
             break;
         }
     }
+}
+
+//in addition to starting the game this function resets the background color.
+function restart() {
+    startGame();
+    document.getElementById("buttonBox").style.background = "#a8a8a8";
 }
 
