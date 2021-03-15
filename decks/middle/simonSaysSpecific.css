@@ -1,5 +1,6 @@
 button{
     background-color: #a8a8a8;
+    border-radius: 0.25em;
 }
 
 .game {
@@ -11,6 +12,7 @@ button{
 .buttonBox {
     background: lightgrey;
     padding: 8px 8px;
+    border-radius: 0.25em;
 }
 
 .score, .startGame {
