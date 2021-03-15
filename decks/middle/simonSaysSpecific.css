@@ -2,10 +2,6 @@ button{
     background-color: #a8a8a8;
 }
 
-button:hover {
-    background-color: #808080;
-}
-
 .game {
     background: lightgrey;
     width: 6em;
@@ -19,4 +15,8 @@ button:hover {
 
 .score, .startGame {
     margin-left: 8px;
+}
+
+button:hover {
+    background-color: #808080;
 }
