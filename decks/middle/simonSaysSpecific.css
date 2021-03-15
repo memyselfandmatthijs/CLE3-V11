@@ -6,8 +6,17 @@ button:hover {
     background-color: #808080;
 }
 
+.game {
+    background: lightgrey;
+    width: 6em;
+    padding: 8px 8px;
+}
+
 .buttonBox {
     background: lightgrey;
-    width: 5em;
     padding: 8px 8px;
+}
+
+.score, .startGame {
+    margin-left: 8px;
 }
