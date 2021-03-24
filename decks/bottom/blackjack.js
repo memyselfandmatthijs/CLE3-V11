@@ -75,19 +75,14 @@ function createDeck() {
     return deck;
 }
 
-function shuffleDeck(times) {
-    for (let i = 0; i < times; i++) {
-        //Takes 2 random cards from the array deck
-        let pickCard1 = Math.floor(Math.random() * deck.length);
-        let pickCard2 = Math.floor(Math.random() * deck.length);
-        //Puts the first card in a temporary variable
-        let temp = deck[pickCard1];
-        //Put the second card, and put it in the first card's original location
-        deck[pickCard1] = deck[pickCard2];
-        //Put the card held in the temporary variable in the second one's position, and repeat "shuffle" times
-        deck[pickCard2] = temp;
+// Algorithm Durstenfeld https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffleDeck(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
-    return deck;
 }
 
 //Adds the value of the card and suit together
@@ -130,13 +125,18 @@ function getCardNumericValue(card) {
 function getScore(cardArray) {
     let score = 0;
     let hasAce = false;
+
+    //
     for (let i = 0; i < cardArray.length; i++) {
         let card = cardArray[i];
         score += getCardNumericValue(card);
+
+        //If the card Ace is there
         if (card.value === 'Ace') {
             hasAce = true;
         }
     }
+    //And if the Ace card is below or equal to 21 when adding 10 extra points, do that instead of +1 points
     if (hasAce && score + 10 <= 21) {
         return score + 10;
     }
