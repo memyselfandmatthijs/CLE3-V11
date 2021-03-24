@@ -121,12 +121,11 @@ function getCardNumericValue(card) {
     }
 }
 
-
 function getScore(cardArray) {
     let score = 0;
     let hasAce = false;
 
-    //
+    //Adds the card value to the score
     for (let i = 0; i < cardArray.length; i++) {
         let card = cardArray[i];
         score += getCardNumericValue(card);
@@ -143,7 +142,6 @@ function getScore(cardArray) {
     return score;
 }
 
-
 function updateScores() {
     dealerScore = getScore(dealerCards);
     playerScore = getScore(playerCards);
@@ -155,16 +153,20 @@ function checkForEndOfGame() {
 
     if (gameOver) {
         // let dealer take cards
-        while(dealerScore < playerScore
-        && playerScore <= 21
-        && dealerScore <= 21) {
+        while(dealerScore < playerScore && playerScore <= 21 && dealerScore <= 21) {
             dealerCards.push(getNextCard());
             updateScores();
-
         }
     }
-
     if (playerScore > 21) {
+        playerWon = false;
+        gameOver = true;
+    }
+    else if (playerScore === 21){
+        playerWon = true;
+        gameOver = true;
+    }
+    else if (dealerScore === 21){
         playerWon = false;
         gameOver = true;
     }
@@ -185,17 +187,18 @@ function checkForEndOfGame() {
 
 
 function showStatus() {
+    // Displays text when game isn't started yet
     if (!gameStarted) {
-        textArea.innerText = 'Welcome to Blackjack!';
+        textArea.innerText = "Ready to play Blackjack!";
         return;
     }
 
-    let dealerCardString = '';
+    let dealerCardString = "";
     for (let i=0; i < dealerCards.length; i++) {
         dealerCardString += getCardString(dealerCards[i]) + '\n';
     }
 
-    let playerCardString = '';
+    let playerCardString = "";
     for (let i=0; i < playerCards.length; i++) {
         playerCardString += getCardString(playerCards[i]) + '\n';
     }
@@ -205,18 +208,20 @@ function showStatus() {
     textArea.innerText =
         'Dealer has:\n' +
         dealerCardString +
-        '(score: '+ dealerScore  + ')\n\n' +
+        '(Score: '+ dealerScore  + ')\n\n' +
 
         'Player has:\n' +
         playerCardString +
-        '(score: '+ playerScore  + ')\n\n';
+        '(Score: '+ playerScore  + ')\n\n';
 
     if (gameOver) {
         if (playerWon) {
             textArea.innerText += "You won!";
-        } else if (dealerScore === playerScore){
+        }
+        else if (dealerScore === playerScore){
             textArea.innerText += "Draw";
-        } else {
+        }
+        else {
             textArea.innerText += "Dealer won!";
         }
         startGameButton.style.display = 'inline';
