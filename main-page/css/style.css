@@ -28,7 +28,11 @@ a {
 }
 
 a:hover {
-    font-weight: bold;
+    background: #e2201d;
+}
+
+.secondary-cta:hover {
+    background: #063450;
 }
 
 li {
