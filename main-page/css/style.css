@@ -7,7 +7,7 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     background: #f5f0f0;
@@ -62,42 +62,22 @@ ul > a {
 
 /* Navbar */
 
-nav > .content {
-    display: flex;
-    max-width: 100%;
-    width: 1500px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.logo-box {
-    display: flex;
-    align-items: center;
-}
-
 .nav-logo {
     width: 45px;
     height: 45px;
 }
 
-.left-text {
-    display: flex;
-    align-items: center;
-    flex: 1;
-}
-
 /* Hero Section */
 
+
 .left-col h1{
-    margin: 0;
+    margin-right: 8em;
     color: var(--secondary-color);
-    width: 600px;
 }
 
 .left-col p{
     margin: 2em 0;
     color: rgb(84, 90, 107);
-    width: 550px;
     font-size: 1.2em;
 }
 
@@ -114,9 +94,8 @@ nav > .content {
 
 .container {
     display: flex;
-    grid-template-columns: 180px auto;
     justify-content: unset;
-    width: 1500px;
+    padding: 7em 10%;
     margin: 0 auto;
 }
 
@@ -126,7 +105,7 @@ nav > .content {
     display: flex;
 }
 
-.primary-cta, .secondary-cta {
+.primary-cta, .secondary-cta, .nav-login {
     color: white;
     text-decoration: none;
     padding: .5em 1.2em;
@@ -140,7 +119,7 @@ nav > .content {
     display: flex;
 }
 
-.primary-cta {
+.primary-cta, .nav-login {
     background-color: var(--primary-color);
     margin-right: 1em;
 }
@@ -151,10 +130,6 @@ nav > .content {
 
 
 /* Sections */
-
-section {
-    padding: 10em 4em;
-}
 
 .game-section h2{
     margin-top: 0;
@@ -173,11 +148,11 @@ section {
 }
 
 .boxes{
-    display: flex; 
-    background: #191c24; 
-    border-radius: 8px; 
+    display: flex;
+    background: #191c24;
+    border-radius: 8px;
 }
-  
+
 .box {
     flex: 1;
     padding: 40px 40px;
@@ -203,7 +178,7 @@ section {
 
 .card-container {
     width: 1500px;
-    margin: 0 auto;      
+    margin: 0 auto;
 }
 
 .cards {
@@ -222,8 +197,12 @@ section {
 }
 
 .works-container {
-    padding: 6em 4em;
     background-color: #d8d6d6;
+    text-align: left;
+    display: flex;
+    justify-content: unset;
+    padding: 7em 10%;
+    margin: 0 auto;
 }
 
 .ios-android {
@@ -239,7 +218,114 @@ section {
 
 .yt-template {
     width: 50%;
-    margin-left: 22em;
+    padding-left: 22em;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    margin-right: auto;
 }
 
 /* Responsiveness */
+@media only screen and (max-width: 1320px) {
+
+    .left-col h1{
+        margin-right: 1em;
+    }
+
+    .left-col p{
+        margin-right: 2em;
+    }
+
+    .hero-img {
+        display: none;
+    }
+    .yt-template {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 1080px) {
+    .nav-login {
+        padding: .3em .5em;
+    }
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .works-container {
+        padding: 0 10% 7em 10%;
+    }
+
+    .boxes {
+        display: block;
+    }
+
+    .box {
+        margin: 0 0 0 4em;
+    }
+
+    .mobile-template {
+        display: none;
+    }
+    .download {
+        padding: 0;
+    }
+
+    .content-right {
+        margin: 0;
+    }
+
+    .download > .container {
+        padding: 0;
+    }
+
+    .content-right {
+        padding: 0 10% 7em 10%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .left-col h1 {
+        font-size: 35px;
+        margin-right: 0;
+    }
+
+    .left-col p{
+        font-size: 18px;
+        margin-right: 2em;
+    }
+
+    .hero-img {
+        display: none;
+    }
+    .container {
+        padding: 3em 10% 5em 10%;
+    }
+
+    .game-section p, .game-section {
+        width: 18em;
+    }
+
+    .box {
+        margin: 0;
+        width: 15em;
+    }
+    .card-container {
+        width: 20em;
+    }
+    h2 {
+        width: 15em;
+    }
+}
