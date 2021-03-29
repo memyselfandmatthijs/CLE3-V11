@@ -81,9 +81,9 @@ img {
         min-height: 3080px;
         background-color: #ff0004;
         text-align: left;
-        margin-left: 0%;
-        margin-right: 0%;
-        margin-top: 0px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
     }
 
     .container {
