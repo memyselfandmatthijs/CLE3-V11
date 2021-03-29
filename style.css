@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 .container {
     max-width: 50%;
     min-height: 1080px;
@@ -16,10 +18,11 @@
 
 body {
     background-color: #4b0001;
+    font-family: Open Sans,Helvetica,Arial,sans-serif
 }
 
 .button {
-    background-color: #9e0305;
+    background-color: #b80300;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -29,10 +32,11 @@ body {
     font-size: 16px;
     margin-top: 150px;
     width: 80px;
+    border-radius: 5px;
 }
 
 .button1 {
-    background-color: #9e0305;
+    background-color: #b80300;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -41,6 +45,11 @@ body {
     display: inline-block;
     font-size: 16px;
     width: 80px;
+    border-radius: 5px;
+}
+
+.button1:hover, .button:hover {
+    background-color: #e2101d;
 }
 
 .section2 {
@@ -52,4 +61,32 @@ img {
     max-height: 400px;
     object-fit: fill;
     margin-top: 0px;
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        max-width: 80%;
+        min-height: 2080px;
+        background-color: #ff0004;
+        text-align: left;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        min-height: 3080px;
+        background-color: #ff0004;
+        text-align: left;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-top: 0px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
 }
