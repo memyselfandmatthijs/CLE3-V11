@@ -211,6 +211,23 @@ ul > a {
     background-color: #d8d6d6;
 }
 
+.menu{
+    text-align: center;
+}
+
+.menuBtn{
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px auto;
+    width: 56vw;
+}
+.BtnImg{
+    height: 10vw;
+    width: 54vw;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
 /* Downloads section */
 
 .mobile-template {
