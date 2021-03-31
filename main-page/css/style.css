@@ -233,6 +233,22 @@ header {
     margin-right: auto;
 }
 
+.menu{
+    text-align: center;
+}
+
+.menuBtn{
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px auto;
+    width: 56vw;
+}
+.BtnImg{
+    height: 10vw;
+    width: 54vw;
+    object-fit: cover;
+}
+
 /* Responsiveness */
 @media only screen and (max-width: 1320px) {
 
@@ -327,5 +343,9 @@ header {
     }
     h2 {
         width: 15em;
+    }
+
+    .menuBtn{
+        width: 100%;
     }
 }
