@@ -36,7 +36,7 @@ if (isset($_POST['Signup'])) {
         or die('Error: ' . $query);
 
         if ($result) {
-            header();
+            header(index);
             exit;
         } else {
             $errors[] = 'Something went wrong in your database query: ' . mysqli_error($db);
@@ -59,6 +59,7 @@ if (isset($_POST['Signup'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<section>
 <div class="wrapper">
     <div class="title-text">
         <div class="title login">
@@ -75,6 +76,7 @@ if (isset($_POST['Signup'])) {
             <div class="slider-tab">
             </div>
         </div>
+
         <div class="form-inner">
             <form action="" class="login">
                 <div class="field">
@@ -94,10 +96,10 @@ if (isset($_POST['Signup'])) {
             </form>
             <form action="" class="signup" method="post">
                 <div class="field">
-                    <input type="text" placeholder="Email Address"  value="<?=$email?>"/>
+                    <input name="email" id="email" type="text" placeholder="Email Address" required  value="<?=$email?>">
                 </div>
                 <div class="field">
-                    <input id="password" type="password" placeholder="password"  />
+                    <input name="password" id="password" type="password" placeholder="password" required >
                 </div>
                 <div class="field btn">
                     <div class="btn-layer">
@@ -108,25 +110,8 @@ if (isset($_POST['Signup'])) {
         </div>
     </div>
 </div>
-<script>
-    const loginText = document.querySelector(".title-text .login");
-    const loginForm = document.querySelector("form.login");
-    const loginBtn = document.querySelector("label.login");
-    const signupBtn = document.querySelector("label.signup");
-    const signupLink = document.querySelector("form .signup-link a");
-    signupBtn.onclick = (()=>{
-        loginForm.style.marginLeft = "-50%";
-        loginText.style.marginLeft = "-50%";
-    });
-    loginBtn.onclick = (()=>{
-        loginForm.style.marginLeft = "0%";
-        loginText.style.marginLeft = "0%";
-    });
-    signupLink.onclick = (()=>{
-        signupBtn.click();
-        return false;
-    });
-</script>
+</section>
+<script src="animation.js"></script>
 
 </body>
 </html>
