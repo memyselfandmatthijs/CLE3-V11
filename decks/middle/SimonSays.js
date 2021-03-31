@@ -1,6 +1,11 @@
 let series = [];
 let registeredSeries = [];
 let score = 0;
+let gameRunning = false;
+
+let buttonBox = document.getElementById("buttonBox");
+let scoreElement = document.getElementById("score");
+
 
 //add event listeners
 document.getElementById("buttonBox").addEventListener("click", registerClick);
@@ -20,11 +25,14 @@ function addNumber(){
 
 // this functions first resets all the values, then  it adds a number and runs game()
 function startGame(){
-    series.length = 0;
-    registeredSeries.length = 0;
-    score = 0;
-    addNumber();
-    game();
+    if (gameRunning === false) {                                                     //this if statement keeps the function from calling game() while the game is still going,
+        series.length = 0;                                                           //if the game() would get called while it's still going it will mess up the buttons
+        registeredSeries.length = 0;
+        score = 0;
+        addNumber();
+        gameRunning = true;
+        game();
+    }
 }
 
 document.getElementById("score").innerHTML = "score = " + score;                // This makes sure the score is displayed when the page is first loaded
@@ -67,15 +75,16 @@ function checkAnswer(){
                 game();
             }, 2000);
             registeredSeries.length = 0;
-            document.getElementById("score").innerHTML = "score = " + score;    // this refreshes the score
-            document.getElementById("buttonBox").style.background = "#49ed28";  // this makes the background green to tell the user the registered series was correct
+            scoreElement.innerHTML = "score = " + score;    // this refreshes the score
+            buttonBox.style.background = "#49ed28";  // this makes the background green to tell the user the registered series was correct
             break;
         }
     if(series[(i)] !== registeredSeries[(i)]){                                          // if the numbers don't match it will change log 'error' in the console and turn the background to red
             console.log("error");
             score = 0;
-            document.getElementById("score").innerHTML = "score = " + score;
-            document.getElementById("buttonBox").style.background = "#f70505";
+            scoreElement.innerHTML = "score = " + score;
+            buttonBox.style.background = "#f70505"
+            gameRunning = false;
             break;
         }
     }
@@ -83,7 +92,8 @@ function checkAnswer(){
 
 //in addition to starting the game this function resets the background color.
 function restart() {
-    startGame();
-    document.getElementById("buttonBox").style.background = "#a8a8a8";
+        gameRunning = false;
+        startGame();
+        buttonBox.style.background = "#a8a8a8";
 }
 

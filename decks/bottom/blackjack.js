@@ -75,19 +75,14 @@ function createDeck() {
     return deck;
 }
 
-function shuffleDeck(times) {
-    for (let i = 0; i < times; i++) {
-        //Takes 2 random cards from the array deck
-        let pickCard1 = Math.floor(Math.random() * deck.length);
-        let pickCard2 = Math.floor(Math.random() * deck.length);
-        //Puts the first card in a temporary variable
-        let temp = deck[pickCard1];
-        //Put the second card, and put it in the first card's original location
-        deck[pickCard1] = deck[pickCard2];
-        //Put the card held in the temporary variable in the second one's position, and repeat "shuffle" times
-        deck[pickCard2] = temp;
+// Algorithm Durstenfeld https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffleDeck(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
-    return deck;
 }
 
 //Adds the value of the card and suit together
@@ -126,23 +121,26 @@ function getCardNumericValue(card) {
     }
 }
 
-
 function getScore(cardArray) {
     let score = 0;
     let hasAce = false;
+
+    //Adds the card value to the score
     for (let i = 0; i < cardArray.length; i++) {
         let card = cardArray[i];
         score += getCardNumericValue(card);
+
+        //If the card Ace is there
         if (card.value === 'Ace') {
             hasAce = true;
         }
     }
+    //And if the Ace card is below or equal to 21 when adding 10 extra points, do that instead of +1 points
     if (hasAce && score + 10 <= 21) {
         return score + 10;
     }
     return score;
 }
-
 
 function updateScores() {
     dealerScore = getScore(dealerCards);
@@ -155,16 +153,20 @@ function checkForEndOfGame() {
 
     if (gameOver) {
         // let dealer take cards
-        while(dealerScore < playerScore
-        && playerScore <= 21
-        && dealerScore <= 21) {
+        while(dealerScore < playerScore && playerScore <= 21 && dealerScore <= 21) {
             dealerCards.push(getNextCard());
             updateScores();
-
         }
     }
-
     if (playerScore > 21) {
+        playerWon = false;
+        gameOver = true;
+    }
+    else if (playerScore === 21){
+        playerWon = true;
+        gameOver = true;
+    }
+    else if (dealerScore === 21){
         playerWon = false;
         gameOver = true;
     }
@@ -185,17 +187,18 @@ function checkForEndOfGame() {
 
 
 function showStatus() {
+    // Displays text when game isn't started yet
     if (!gameStarted) {
-        textArea.innerText = 'Welcome to Blackjack!';
+        textArea.innerText = "Ready to play Blackjack!";
         return;
     }
 
-    let dealerCardString = '';
+    let dealerCardString = "";
     for (let i=0; i < dealerCards.length; i++) {
         dealerCardString += getCardString(dealerCards[i]) + '\n';
     }
 
-    let playerCardString = '';
+    let playerCardString = "";
     for (let i=0; i < playerCards.length; i++) {
         playerCardString += getCardString(playerCards[i]) + '\n';
     }
@@ -205,18 +208,20 @@ function showStatus() {
     textArea.innerText =
         'Dealer has:\n' +
         dealerCardString +
-        '(score: '+ dealerScore  + ')\n\n' +
+        '(Score: '+ dealerScore  + ')\n\n' +
 
         'Player has:\n' +
         playerCardString +
-        '(score: '+ playerScore  + ')\n\n';
+        '(Score: '+ playerScore  + ')\n\n';
 
     if (gameOver) {
         if (playerWon) {
             textArea.innerText += "You won!";
-        } else if (dealerScore === playerScore){
+        }
+        else if (dealerScore === playerScore){
             textArea.innerText += "Draw";
-        } else {
+        }
+        else {
             textArea.innerText += "Dealer won!";
         }
         startGameButton.style.display = 'inline';
