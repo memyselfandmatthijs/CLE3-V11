@@ -62,10 +62,28 @@ ul > a {
 
 /* Navbar */
 
+/* nav > .content {
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2em 13em;
+} */
+
+/* .logo-box {
+    display: flex;
+    align-items: center;
+} */
+
 .nav-logo {
     width: 45px;
     height: 45px;
 }
+
+/* .left-text {
+    display: flex;
+    align-items: center;
+    flex: 1;
+} */
 
 /* Hero Section */
 
@@ -73,11 +91,13 @@ ul > a {
 .left-col h1{
     margin-right: 8em;
     color: var(--secondary-color);
+    /* width: 600px; */
 }
 
 .left-col p{
     margin: 2em 0;
     color: rgb(84, 90, 107);
+    /* width: 550px; */
     font-size: 1.2em;
 }
 
@@ -94,6 +114,7 @@ ul > a {
 
 .container {
     display: flex;
+    grid-template-columns: 180px auto;
     justify-content: unset;
     padding: 7em 10%;
     margin: 0 auto;
@@ -130,6 +151,10 @@ ul > a {
 
 
 /* Sections */
+
+/* section {
+    padding: 10em 4em;
+} */
 
 .game-section h2{
     margin-top: 0;
@@ -197,9 +222,14 @@ ul > a {
 }
 
 .works-container {
-    background-color: #d8d6d6;
-    text-align: left;
     display: flex;
+    padding: 7em 10%;
+    background-color: #d8d6d6;
+    justify-content: space-between;
+    text-align: left;
+
+    display: flex;
+    grid-template-columns: 180px auto;
     justify-content: unset;
     padding: 7em 10%;
     margin: 0 auto;
@@ -222,6 +252,7 @@ ul > a {
 
 }
 
+
 header {
     display: flex;
     justify-content: space-between;
@@ -233,21 +264,8 @@ header {
     margin-right: auto;
 }
 
-.menu{
-    text-align: center;
-}
+/* -------------- Responsive HERO ------------*/
 
-.menuBtn{
-    align-items: center;
-    border: 1px solid black;
-    margin: 10px auto;
-    width: 56vw;
-}
-.BtnImg{
-    height: 10vw;
-    width: 54vw;
-    object-fit: cover;
-}
 
 /* Responsiveness */
 @media only screen and (max-width: 1320px) {
@@ -257,7 +275,7 @@ header {
     }
 
     .left-col p{
-        margin-right: 2em;
+        margin-right: 2em 0;
     }
 
     .hero-img {
@@ -315,12 +333,12 @@ header {
 
     .left-col h1 {
         font-size: 35px;
-        margin-right: 0;
+        margin-right: 0em;
     }
 
     .left-col p{
         font-size: 18px;
-        margin-right: 2em;
+        margin-right: 2em 0;
     }
 
     .hero-img {
@@ -344,8 +362,17 @@ header {
     h2 {
         width: 15em;
     }
-
-    .menuBtn{
-        width: 100%;
-    }
 }
+
+/* @media only screen and (max-width: 720px) {
+    .left-col{
+        display: block;
+    }
+} */
+
+
+
+
+
+
+
