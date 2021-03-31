@@ -14,7 +14,7 @@ if (isset($_SESSION['loggedInUser'])) {
 if (isset($_POST['Signup'])) {
 
     /** @var mysqli $db */
-    require_once "includes/db.php";
+    require_once ("includes/db.php");
 
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = $_POST['password'];
@@ -36,7 +36,7 @@ if (isset($_POST['Signup'])) {
         or die('Error: ' . $query);
 
         if ($result) {
-            header(index);
+            header();
             exit;
         } else {
             $errors[] = 'Something went wrong in your database query: ' . mysqli_error($db);
@@ -59,7 +59,7 @@ if (isset($_POST['Signup'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<section>
+
 <div class="wrapper">
     <div class="title-text">
         <div class="title login">
@@ -110,7 +110,7 @@ if (isset($_POST['Signup'])) {
         </div>
     </div>
 </div>
-</section>
+
 <script src="animation.js"></script>
 
 </body>
