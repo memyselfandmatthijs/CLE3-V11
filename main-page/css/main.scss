@@ -379,6 +379,62 @@ header {
     color: #fff;
 }
 
+/* Scroll to Top Button*/
+#back-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: $secondaryColor;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid $secondaryColor;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+  
+/* Animations */
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+ 
+/* fadeIn */
+@keyframes btnEntrance {
+from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+}
+to {
+     opacity: 1;
+    transform: translate3d(0, 0, 0);
+    }
+}
+  
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;  
+    animation-name: btnExit;
+}
+
+/* fadeOut */
+@keyframes btnExit {
+from {
+    opacity: 1;
+}
+to {
+     opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    }
+}
+
 /* Responsiveness */
 @media only screen and (max-width: 1320px) {
 
@@ -499,5 +555,10 @@ header {
     }
     h2 {
         width: 15em;
+    }
+    #back-to-top-btn {
+        bottom: 20px;
+        right: 150px;
+        z-index: 5;
     }
 }
