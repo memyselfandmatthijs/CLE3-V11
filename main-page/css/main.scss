@@ -418,14 +418,14 @@ to {
     }
 }
   
-.btnExit {
+.btnRemove {
     animation-duration: 0.25s;
     animation-fill-mode: both;  
-    animation-name: btnExit;
+    animation-name: btnRemove;
 }
 
 /* fadeOut */
-@keyframes btnExit {
+@keyframes btnRemove {
 from {
     opacity: 1;
 }

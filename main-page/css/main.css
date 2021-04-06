@@ -481,17 +481,17 @@ header {
   }
 }
 
-.btnExit {
+.btnRemove {
   -webkit-animation-duration: 0.25s;
           animation-duration: 0.25s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-name: btnExit;
-          animation-name: btnExit;
+  -webkit-animation-name: btnRemove;
+          animation-name: btnRemove;
 }
 
 /* fadeOut */
-@-webkit-keyframes btnExit {
+@-webkit-keyframes btnRemove {
   from {
     opacity: 1;
   }
@@ -501,7 +501,7 @@ header {
             transform: translate3d(0, 100%, 0);
   }
 }
-@keyframes btnExit {
+@keyframes btnRemove {
   from {
     opacity: 1;
   }

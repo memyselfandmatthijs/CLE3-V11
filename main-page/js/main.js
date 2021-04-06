@@ -141,7 +141,7 @@ function scroll() {
   if (window.pageYOffset > 250) {
     // If the Scroll-To-Top button doesn't have the classlist, add the new classes
     if(!scrollToTopButton.classList.contains("btnEntrance")) {
-        scrollToTopButton.classList.remove("btnExit");
+        scrollToTopButton.classList.remove("btnRemove");
         scrollToTopButton.classList.add("btnEntrance");
         scrollToTopButton.style.display = "block";
     }
@@ -149,7 +149,7 @@ function scroll() {
   // If the Y is 250 or below it will check if it contains the btnEntrance classlist
   else if (scrollToTopButton.classList.contains("btnEntrance")){ 
     scrollToTopButton.classList.remove("btnEntrance");
-    scrollToTopButton.classList.add("btnExit");
+    scrollToTopButton.classList.add("btnRemove");
 
       // This gives a delay to the display none, so the exit animation can take place
       setTimeout(function() {
