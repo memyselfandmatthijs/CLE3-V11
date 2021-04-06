@@ -13,22 +13,20 @@
 window.addEventListener('load', init);
 
 // Global variables
-let foodBox;
+let cardsContainer;
 let webserviceURL;
-let recipe;
-let buttonId;
-let button;    
+let update;   
 
 function init(){
     // Get all the elements from HTML
-    foodBox = document.querySelector("div#cards");
-    recipe = document.querySelector('div#recipe'); 
+    cardsContainer = document.querySelector("div#cards");
+    update = document.querySelector('div#update'); 
     
     // Webservice URL
     webserviceURL = 'webservice/index.php';
 
     // Global click event handlers for buttons
-    foodBox.addEventListener('click', recipeClickHandler);
+    cardsContainer.addEventListener('click', updateClickHandler);
 
     // Show all the cards on the website
     addCards();
@@ -50,7 +48,7 @@ function getCardItemsSuccessHandler(data){
     console.log(data);
 
     // Reset/Empty Cards
-    foodBox.innerHTML = "";
+    cardsContainer.innerHTML = "";
 
     // Create dom elements per item
     for(let item of data) {
@@ -58,46 +56,45 @@ function getCardItemsSuccessHandler(data){
     }
 }
 
-
-function addCard(dish){  
+function addCard(update){  
     // Create div of the cards
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
-    cardDiv.setAttribute('id', dish.id);
-    foodBox.appendChild(cardDiv);
+    cardDiv.setAttribute('id', update.id);
+    cardsContainer.appendChild(cardDiv);
 
     // Create image in the div
     const img = document.createElement("img");
     img.classList.add("bg-img");
-    img.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${dish.imageTag}')`;
+    img.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${update.imageTag}')`;
     cardDiv.appendChild(img);
 
     // Creates div for the names
     const nameDiv = document.createElement("div");
-    nameDiv.innerText = dish.name;
+    nameDiv.innerText = update.name;
     cardDiv.appendChild(nameDiv);
 
     // Create read more button
-    const recipeButton = document.createElement('button');
-    recipeButton.innerText = 'Check Update';
-    recipeButton.className = 'recipeButton';
-    recipeButton.dataset.id = dish.id;
-    nameDiv.appendChild(recipeButton);
+    const updateButton = document.createElement('button');
+    updateButton.innerText = 'Check Update';
+    updateButton.className = 'updateButton';
+    updateButton.dataset.id = update.id;
+    nameDiv.appendChild(updateButton);
 }
 
-function recipeClickHandler(e){
+function updateClickHandler(e){
     // If it's not a button
     if (e.target.nodeName !== 'BUTTON') {
         return;
     }
     // If read button has been clicked
-    if (e.target.className === "recipeButton"){
-        getRecipeButton(e.target.dataset.id);
+    if (e.target.className === "updateButton"){
+        getUpdateButton(e.target.dataset.id);
     }
 }
 
-// More information about the food
-function getRecipeButton(id){
+// More information about the update
+function getUpdateButton(id){
     webserviceURLTags = webserviceURL + "?id=" + id;
     fetch(webserviceURLTags)
         .then((response) => {
@@ -106,24 +103,24 @@ function getRecipeButton(id){
             }
             return response.json();
         })
-        .then(displayRecipe)
+        .then(displayUpdate)
         .catch(getCardItemsErrorHandler);
 }
 
-function displayRecipe(data){
-    let recipe = document.querySelector('#recipe');
+function displayUpdate(data){
+    let update = document.querySelector('#update');
 
-    recipe.innerText = data.recipe;
+    update.innerText = data.update;
 }
 
 function getCardItemsErrorHandler(data){
     console.log(data);
 
     // Reset/Empty Cards
-    foodBox.innerHTML = "";
+    cardsContainer.innerHTML = "";
 
     const element = document.createElement('p');
     element.innerText = "Er ging iets fout!";
     element.classList.add('error');
-    foodBox.appendChild(element);
+    cardsContainer.appendChild(element);
 }

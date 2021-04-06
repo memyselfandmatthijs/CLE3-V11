@@ -2,7 +2,7 @@
 /**
  * @return array
  */
-function getDishes()
+function getUpdates()
 {
     return [
         [
@@ -52,42 +52,33 @@ function getDishes()
  * @param $id
  * @return mixed
  */
-function getDishDetails($id)
+function getUpdatesDetails($id)
 {
-    $tags = [
+    $updateInfo = [
         1 => [
-            "recipe" => "In update 2.3 we released some major new updates! \n\n - New Minigames \n- Fixed glitch in game \n- Changed colors \n- Added variables \n- Added vc",
-            "tags" => ['Italian', 'Pizza']
+            "update" => "In update 2.3 we released some major new updates! \n\n - New Minigames \n- Fixed glitch in game \n- Changed colors \n- Added variables \n- Added vc"
         ],
         2 => [
-            "recipe" => "In update 2.2 we released some major new updates! \n\n - Added video of game \n- Added new sized menu \n- Responsive for mobile \n- Fixed blue colors \n- Added text",
-            "tags" => ['Fries', 'French']
+            "update" => "In update 2.2 we released some major new updates! \n\n - Added video of game \n- Added new sized menu \n- Responsive for mobile \n- Fixed blue colors \n- Added text"
         ],
         3 => [
-            "recipe" => "In update 2.1 we released some major new updates! \n\n - Added learn more \n- Fixed glitch in game \n- Changed colors \n- Fixed glitch with Menu \n- Added vc",
-            "tags" => ['Turkish', 'Döner', "Kebab"]
+            "update" => "In update 2.1 we released some major new updates! \n\n - Added learn more \n- Fixed glitch in game \n- Changed colors \n- Fixed glitch with Menu \n- Added vc"
         ],
         4 => [
-            "recipe" => "In update 2.0 we released some major new updates! \n\n - Added login page \n- Added another game \n- Added an extra menu \n- Added JavaScript Menu \n- Added text",
-            "tags" => ['Italian', 'Lasagne']
+            "update" => "In update 2.0 we released some major new updates! \n\n - Added login page \n- Added another game \n- Added an extra menu \n- Added JavaScript Menu \n- Added text"
         ],
         5 => [
-            "recipe" => "In update 1.4 we released some major new updates! \n\n - Added Simonsays \n- Fixed glitch in game \n- Changed colors \n- Added Mobile Menu \n- Added text",
-            "tags" => ['American', 'German', 'Burger', 'Hamburger']
+            "update" => "In update 1.4 we released some major new updates! \n\n - Added Simonsays \n- Fixed glitch in game \n- Changed colors \n- Added Mobile Menu \n- Added text"
         ],
         6 => [
-            "recipe" => "In update 1.3 we released some major new updates! \n\n - Added Beerpong \n- Fixed error when loading \n- Made web responsive \n- Added Menu \n- Added vc",
-            "tags" => ['American', 'Chicken', 'Wings']
+            "update" => "In update 1.3 we released some major new updates! \n\n - Added Beerpong \n- Fixed error when loading \n- Made web responsive \n- Added Menu \n- Added vc"
         ],
         7 => [
-            "recipe" => "In update 1.2 we released some major new updates! \n\n - Added Blackjack \n- Fixed glitch in game \n- Added extra version \n- Removed Menu \n- Added text",
-            "tags" => ['Ice', 'Ice Cream', 'Dessert']
+            "update" => "In update 1.2 we released some major new updates! \n\n - Added Blackjack \n- Fixed glitch in game \n- Added extra version \n- Removed Menu \n- Added text"
         ],
         8 => [
-            "recipe" => "In update 1.1 we released some major new updates! \n\n - New Minigames \n- Added blue colors \n- Changed colors \n- Added Menu \n- Added vc",
-            "tags" => ['American', 'Hotdog']
+            "update" => "In update 1.1 we released some major new updates! \n\n - New Minigames \n- Added blue colors \n- Changed colors \n- Added Menu \n- Added vc"
         ]
     ];
-
-    return $tags[$id];
+    return $updateInfo[$id];
 }

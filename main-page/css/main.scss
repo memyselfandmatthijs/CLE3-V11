@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 $favoritesBtnColor: rgb(255, 242, 61);
-$recipeBtnColor: rgb(250, 79, 79);
+$updateBtnColor: rgb(250, 79, 79);
 $errorColor: rgb(212, 25, 25);
 $primaryColor: #b80300;
 $secondaryColor: #031927;
@@ -312,7 +312,7 @@ header {
 	}
 }
 
-#description, #tags, #recipe {
+#description, #tags, #update {
 	color: rgb(235, 235, 235);
 }
 
@@ -344,10 +344,10 @@ header {
     background-color: #ccc;
 }
 
-.recipeButton {
-    background-color: $recipeBtnColor;
+.updateButton {
+    background-color: $updateBtnColor;
     color: #fff;
-    border: 1px solid $recipeBtnColor;
+    border: 1px solid $updateBtnColor;
     padding: .5rem 1rem;
     cursor: pointer;
     border-radius: .25rem;

@@ -353,7 +353,7 @@ header {
   padding: 0;
 }
 
-#description, #tags, #recipe {
+#description, #tags, #update {
   color: #ebebeb;
 }
 
@@ -387,7 +387,7 @@ header {
   background-color: #ccc;
 }
 
-.recipeButton {
+.updateButton {
   background-color: #fa4f4f;
   color: #fff;
   border: 1px solid #fa4f4f;
