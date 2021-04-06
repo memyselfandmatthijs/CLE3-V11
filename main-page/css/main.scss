@@ -3,11 +3,8 @@
 $favoritesBtnColor: rgb(255, 242, 61);
 $recipeBtnColor: rgb(250, 79, 79);
 $errorColor: rgb(212, 25, 25);
-
-:root {
-    --primary-color: #b80300;
-    --secondary-color: #031927;
-}
+$primaryColor: #b80300;
+$secondaryColor: #031927;
 
 html {
     scroll-behavior: smooth;
@@ -31,7 +28,7 @@ h2 {
 }
 
 a {
-    color: var(--secondary-color);
+    color: $secondaryColor;
     text-decoration: none;
 }
 
@@ -50,8 +47,9 @@ li {
     position: relative;
 }
 
-ul > a {
-    background: var(--primary-color);
+ul {
+    a {
+    background: $primaryColor;
     border-radius: 5px;
     padding: .5em 1.2em;
     color: white;
@@ -62,46 +60,24 @@ ul > a {
     flex-direction: column;
     text-align: center;
     display: flex;
+    }
 }
 
-/* Navbar */
-
-/* nav > .content {
-    display: flex;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 2em 13em;
-} */
-
-/* .logo-box {
-    display: flex;
-    align-items: center;
-} */
-
+/* Nav bar */
 .nav-logo {
     width: 45px;
     height: 45px;
 }
 
-/* .left-text {
-    display: flex;
-    align-items: center;
-    flex: 1;
-} */
-
 /* Hero Section */
-
-
 .left-col h1{
     margin-right: 8em;
-    color: var(--secondary-color);
-    /* width: 600px; */
+    color: $secondaryColor;
 }
 
 .left-col p{
     margin: 2em 0;
     color: rgb(84, 90, 107);
-    /* width: 550px; */
     font-size: 1.2em;
 }
 
@@ -125,7 +101,6 @@ ul > a {
 }
 
 /* Buttons */
-
 .hero-cta {
     display: flex;
 }
@@ -145,24 +120,19 @@ ul > a {
 }
 
 .primary-cta, .nav-login {
-    background-color: var(--primary-color);
+    background-color: $primaryColor;
     margin-right: 1em;
 }
 
 .secondary-cta {
-    background-color: var(--secondary-color);
+    background-color: $secondaryColor;
 }
 
 
-/* Sections */
-
-/* section {
-    padding: 10em 4em;
-} */
-
+/* Game sections */
 .game-section h2{
     margin-top: 0;
-    color: var(--secondary-color);
+    color: $secondaryColor;
     width: 395px;
 }
 
@@ -233,7 +203,6 @@ ul > a {
 }
 
 /* Downloads section */
-
 .mobile-template {
     width: 30%;
 }
@@ -269,7 +238,6 @@ ul > a {
 
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
@@ -282,7 +250,6 @@ header {
 }
 
 /* Game Menu */
-
 .menu {
     text-align: center;
 }
@@ -300,112 +267,7 @@ header {
     object-fit: cover;
 }
 
-/* -------------- Responsive HERO ------------*/
-
-
-/* Responsiveness */
-@media only screen and (max-width: 1320px) {
-
-    .left-col h1{
-        margin-right: 1em;
-    }
-
-    .left-col p{
-        margin-right: 2em;
-    }
-
-    .hero-img {
-        display: none;
-    }
-    .yt-template {
-        display: none;
-    }
-}
-
-
-@media only screen and (max-width: 1080px) {
-    .nav-login {
-        padding: .3em .5em;
-    }
-
-    .hero {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-    }
-    .works-container {
-        padding: 0 10% 7em 10%;
-    }
-
-    .boxes {
-        display: block;
-    }
-
-    .box {
-        margin: 0 0 0 4em;
-    }
-
-    .mobile-template {
-        display: none;
-    }
-    .download {
-        padding: 0;
-    }
-
-    .content-right {
-        margin: 0;
-    }
-
-    .download > .container {
-        padding: 0;
-    }
-
-    .content-right {
-        padding: 0 10% 7em 10%;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-
-    .left-col h1 {
-        font-size: 35px;
-        margin-right: 0;
-    }
-
-    .left-col p{
-        font-size: 18px;
-        margin-right: 2em;
-    }
-
-    .hero-img {
-        display: none;
-    }
-    .container {
-        padding: 3em 10% 5em 10%;
-    }
-
-    .game-section p, .game-section {
-        width: 18em;
-    }
-
-    .box {
-        margin: 0;
-        width: 15em;
-    }
-    .card-container {
-        width: 20em;
-    }
-    h2 {
-        width: 15em;
-    }
-}
-
-/* @media only screen and (max-width: 720px) {
-    .left-col{
-        display: block;
-    }
-} */
-
+/* Changelog section*/
 
 .grey-background {
     background-color: #d8d6d6;
@@ -517,6 +379,25 @@ header {
     color: #fff;
 }
 
+/* Responsiveness */
+@media only screen and (max-width: 1320px) {
+
+    .left-col h1{
+        margin-right: 1em;
+    }
+
+    .left-col p{
+        margin-right: 2em;
+    }
+
+    .hero-img {
+        display: none;
+    }
+    .yt-template {
+        display: none;
+    }
+}
+
 @media (max-width: 1250px) {
     #cards {
         grid-template-columns: 1fr 1fr 1fr;
@@ -526,6 +407,48 @@ header {
 @media (max-width: 1030px) {
     #cards {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .nav-login {
+        padding: .3em .5em;
+    }
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .works-container {
+        padding: 0 10% 7em 10%;
+    }
+
+    .boxes {
+        display: block;
+    }
+
+    .box {
+        margin: 0 0 0 4em;
+    }
+
+    .mobile-template {
+        display: none;
+    }
+    .download {
+        padding: 0;
+    }
+
+    .content-right {
+        margin: 0;
+    }
+
+    .download > .container {
+        padding: 0;
+    }
+
+    .content-right {
+        padding: 0 10% 7em 10%;
     }
 }
 
@@ -541,5 +464,40 @@ header {
     }
     .description {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .left-col h1 {
+        font-size: 35px;
+        margin-right: 0;
+    }
+
+    .left-col p{
+        font-size: 18px;
+        margin-right: 2em;
+    }
+
+    .hero-img {
+        display: none;
+    }
+    .container {
+        padding: 3em 10% 5em 10%;
+    }
+
+    .game-section p, .game-section {
+        width: 18em;
+    }
+
+    .box {
+        margin: 0;
+        width: 15em;
+    }
+    .card-container {
+        width: 20em;
+    }
+    h2 {
+        width: 15em;
     }
 }
