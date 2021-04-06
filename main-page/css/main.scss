@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+$favoritesBtnColor: rgb(255, 242, 61);
+$recipeBtnColor: rgb(250, 79, 79);
+$errorColor: rgb(212, 25, 25);
+
 :root {
     --primary-color: #b80300;
     --secondary-color: #031927;
@@ -402,104 +406,98 @@ header {
     }
 } */
 
-.container {
-    margin: 0 auto;
-    max-width: 80vw;
-  }
-  
-  #cards {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-rows: -webkit-max-content;
-    grid-auto-rows: max-content;
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-  }
-  
-  .card {
-    height: 400px;
-    background-color: white;
-  }
-  
-  .card img {
-    width: 100%;
-    height: 60%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  
-  .card div {
-    padding: 10px;
-    font-size: 1.3em;
-  }
-  
-  .description {
-    background-color: grey;
-    padding: 10px;
-    width: 35%;
-    margin: 5px;
-  }
-  
-  .description h2 {
-    text-align: center;
-    color: #1b1b1b;
-    background: #fff;
-    padding: 0;
-    border-radius: 5px;
-  }
-  
-  #description, #tags, #recipe {
-    color: #ebebeb;
-  }
-  
-  .container-box {
-    max-width: 1700px;
-    margin: 20px auto;
-    padding: 10px;
-    background: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  
-  .error {
-    color: #d41919;
-  }
-  
-  .card {
+
+.grey-background {
+    background-color: #d8d6d6;
+}
+
+.cards-container {
+	margin: 0 auto;
+	max-width: 80vw;
+}
+
+#cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-auto-rows: max-content;
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+}
+
+.card {
+	height: 300px;
+	background-color: white;
+	img {
+		width: 100%;
+		height: 60%;
+		object-fit: cover;
+	}
+	div {
+		padding: 10px;
+		font-size: 1.3em;
+	}
+}
+
+.description {
+	background-color: grey;
+	padding: 10px;
+	width: 35%;
+	margin: 5px;
+	h2 {
+		text-align: center;
+		color: rgb(228, 227, 227);
+		padding: 0;
+	}
+}
+
+#description, #tags, #recipe {
+	color: rgb(235, 235, 235);
+}
+
+.container-box {
+	max-width: 1700px;
+	margin: 0px auto;
+	padding: 10px;
+	display: flex;
+}
+
+.error {
+    color: $errorColor;
+}
+
+.card {
     border: 1px solid #d3d3d3;
     border-radius: .25rem;
     position: relative;
-  }
-  
-  .favoriteCard {
+}
+
+.favoriteCard {
     background: #ffffc5;
-  }
-  
-  .bg-img {
+}
+
+.bg-img {
     background-size: cover;
     min-height: 180px;
     background-position: center;
     background-color: #ccc;
-  }
-  
-  .recipeButton {
-    background-color: #fa4f4f;
+}
+
+.recipeButton {
+    background-color: $recipeBtnColor;
     color: #fff;
-    border: 1px solid #fa4f4f;
+    border: 1px solid $recipeBtnColor;
     padding: .5rem 1rem;
     cursor: pointer;
     border-radius: .25rem;
     width: 100%;
     text-align: center;
-  }
-  
-  .favButton, .removeFavButton {
-    background-color: #fff23d;
-    color: black;
-    border: 1px solid #fff23d;
+    margin-top: 20px;
+}
+
+.favButton, .removeFavButton {
+    background-color: $favoritesBtnColor;
+    color: rgb(0, 0, 0);
+    border: 1px solid $favoritesBtnColor;
     padding: .5rem 1rem;
     width: 100%;
     text-align: center;
@@ -507,50 +505,41 @@ header {
     border-radius: 5px;
     display: block;
     margin-top: 10px;
-  }
-  
-  .favButton:hover {
+}
+
+.favButton:hover{
     background-color: #ffffa3;
-    border: 1px solid #fff23d;
-  }
-  
-  .removeFavButton:hover {
+    border: 1px solid $favoritesBtnColor;
+}
+
+.removeFavButton:hover {
     background-color: #ff0000;
     color: #fff;
-  }
-  
-  @media (max-width: 1250px) {
+}
+
+@media (max-width: 1250px) {
     #cards {
-      -ms-grid-columns: 1fr 1fr 1fr;
-          grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
-  }
-  
-  @media (max-width: 1030px) {
+}
+
+@media (max-width: 1030px) {
     #cards {
-      -ms-grid-columns: 1fr 1fr;
-          grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-  }
-  
-  @media (max-width: 840px) {
+}
+
+@media (max-width: 840px) {
     #cards {
-      -ms-grid-columns: 1fr;
-          grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
     .container-box {
-      display: block;
-      max-width: 1700px;
-      margin: 0px auto;
-      padding: 0px;
+        display: block;
+        max-width: 1700px;
+        margin: 0px auto;
+        padding: 0px;
     }
     .description {
-      width: 100%;
+        width: 100%;
     }
-  }
-
-
-
-
-
-
+}
