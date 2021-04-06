@@ -423,7 +423,7 @@ header {
 }
 
 /* Scroll to Top Button*/
-#back-to-top-btn {
+#scroll-to-top-button {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -625,7 +625,7 @@ header {
   h2 {
     width: 15em;
   }
-  #back-to-top-btn {
+  #scroll-to-top-button {
     bottom: 20px;
     right: 150px;
     z-index: 5;

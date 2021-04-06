@@ -130,49 +130,49 @@ function getCardItemsErrorHandler(data){
 
 
 // ----- Scroll-to-top button -----//
-const backToTopButton = document.querySelector("#back-to-top-btn");
+const scrollToTopButton = document.querySelector("#scroll-to-top-button");
 
-// When scroll is being used, scrollFunction will be executed
-window.addEventListener("scroll", scrollFunction);
-backToTopButton.addEventListener("click", smoothScrollBackToTop);
+// When scroll is being used, scroll Function will be executed
+window.addEventListener("scroll", scroll);
+scrollToTopButton.addEventListener("click", scrollToTop);
 
-function scrollFunction() {
+function scroll() {
   // Checks when scrolling the vertial(Y) is above 300 of pixels
   if (window.pageYOffset > 250) {
     // If the Scroll-To-Top button doesn't have the classlist, add the new classes
-    if(!backToTopButton.classList.contains("btnEntrance")) {
-      backToTopButton.classList.remove("btnExit");
-      backToTopButton.classList.add("btnEntrance");
-      backToTopButton.style.display = "block";
+    if(!scrollToTopButton.classList.contains("btnEntrance")) {
+        scrollToTopButton.classList.remove("btnExit");
+        scrollToTopButton.classList.add("btnEntrance");
+        scrollToTopButton.style.display = "block";
     }
   }
   // If the Y is 250 or below it will check if it contains the btnEntrance classlist
-  else if (backToTopButton.classList.contains("btnEntrance")){ 
-      backToTopButton.classList.remove("btnEntrance");
-      backToTopButton.classList.add("btnExit");
+  else if (scrollToTopButton.classList.contains("btnEntrance")){ 
+    scrollToTopButton.classList.remove("btnEntrance");
+    scrollToTopButton.classList.add("btnExit");
 
       // This gives a delay to the display none, so the exit animation can take place
       setTimeout(function() {
-        backToTopButton.style.display = "none";
+        scrollToTopButton.style.display = "none";
       }, 250);
     }
   }
 
-function smoothScrollBackToTop() {
+function scrollToTop() {
   // Beginning of the document
-  const targetPosition = 0;
+  const beginPosition = 0;
   // Our current position, the number of pixels the document is currently scrolled to
-  const startPosition = window.pageYOffset;
-  const distance = targetPosition - startPosition;
+  const currentPosition = window.pageYOffset;
+  const distance = beginPosition - currentPosition;
   // Duration of the animation
   const duration = 750;
   let start;
   
   // Tells the browser that you want to perform an animation
-  window.requestAnimationFrame(step);
+  window.requestAnimationFrame(scrollAnimation);
 
     // Takes the timestamp as the parameter
-    function step(timestamp) {
+    function scrollAnimation(timestamp) {
       // Only execute once at the first repitition. Start will be the starting point of the animation
       if (start === undefined)
         start = timestamp;
@@ -181,14 +181,13 @@ function smoothScrollBackToTop() {
       const progress = timestamp - start;
     // This will be the animation
     // First cordinate is X, that will always be 0
-    window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+    window.scrollTo(0, easeInOutCubic(progress, currentPosition, distance, duration));
     // This checks if it needs to continue when it's caller than duration, else stop the animation
-    if (progress < duration) window.requestAnimationFrame(step);
+    if (progress < duration) window.requestAnimationFrame(scrollAnimation);
   }
 }
 
 // www.gizma.com/easing/
-
 function easeInOutCubic(t, b, c, d) {
 	t /= d/2;
 	if (t < 1) return c/2*t*t*t + b;
