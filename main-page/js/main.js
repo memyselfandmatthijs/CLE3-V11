@@ -1,15 +1,18 @@
-// Hero Section
-// gsap.from('header', {opacity: 0, duration: 1, delay:1.8, y: 30})
-// gsap.from('.container img', {opacity: 0, duration: 1, delay:1.3, y: 30})
-// gsap.from('.hero-cta', {opacity: 0, duration: 1, delay:1, y: 30})
-// gsap.from('.left-col p', {opacity: 0, duration: 1, delay:0.7, y: 30})
-// gsap.from('.left-col h1', {opacity: 0, duration: 1, delay:0.5, y: 30})
+// ----- GSAP ANIMATION -----//
 
-// // Works section
-// gsap.from('.game-section', {opacity: 0, duration: 1, delay:0.7, y: 30})
-// gsap.from('.yt-template', {opacity: 0, duration: 1, delay:0.7, y: 30})
-// gsap.from('.card-container', {opacity: 0, duration: 1, delay:1.7, y: 30})
+//Hero Section
+gsap.from('header', {opacity: 0, duration: 1, delay:1.8, y: 30})
+gsap.from('.container img', {opacity: 0, duration: 1, delay:1.3, y: 30})
+gsap.from('.hero-cta', {opacity: 0, duration: 1, delay:1, y: 30})
+gsap.from('.left-col p', {opacity: 0, duration: 1, delay:0.7, y: 30})
+gsap.from('.left-col h1', {opacity: 0, duration: 1, delay:0.5, y: 30})
 
+// Works section
+gsap.from('.game-section', {opacity: 0, duration: 1, delay:0.7, y: 30})
+gsap.from('.yt-template', {opacity: 0, duration: 1, delay:0.7, y: 30})
+gsap.from('.card-container', {opacity: 0, duration: 1, delay:1.7, y: 30})
+
+// ----- Adding Cards -----//
 window.addEventListener('load', init);
 
 // Global variables
@@ -126,7 +129,7 @@ function getCardItemsErrorHandler(data){
 }
 
 
-// Scroll-To-Top Button
+// ----- Scroll-to-top button -----//
 const backToTopButton = document.querySelector("#back-to-top-btn");
 
 // When scroll is being used, scrollFunction will be executed
@@ -154,7 +157,6 @@ function scrollFunction() {
       }, 250);
     }
   }
-
 
 function smoothScrollBackToTop() {
   // Beginning of the document
